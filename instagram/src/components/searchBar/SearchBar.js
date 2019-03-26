@@ -12,7 +12,7 @@ const SearchBar = () => {
                 </div>
             </div>
             <form>
-                <input type="text" placeholder="&#xf374; Search"/>
+                <input type="text" placeholder="Search"/>
             </form>
             <div className="icons">
                 <i className="far fa-compass fa-lg"></i>
