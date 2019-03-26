@@ -16,8 +16,8 @@ const SearchBar = () => {
             </form>
             <div className="icons">
                 <i className="far fa-compass fa-lg"></i>
-                <i className="far fa-user fa-lg"></i>
                 <i className="far fa-heart fa-lg"></i>
+                <i className="far fa-user fa-lg"></i>
             </div>
                         
         </div>

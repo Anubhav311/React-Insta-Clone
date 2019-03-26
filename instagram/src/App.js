@@ -11,17 +11,16 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      posts = dummyData
+      posts: dummyData
     };
   }
+
   render() {
     return (
       <div className="App">
         <SearchBar/>
-        <div><img src={dummyData[0].imageUrl} alt="strawberry"/></div>
-        <PostContainer post={}/>
-        <CommentSection/>
-        {console.log(dummyData)}
+        <PostContainer dummyData={this.state.posts}/>
+        {/* <CommentSection/> */}
       </div>
     );
   }
