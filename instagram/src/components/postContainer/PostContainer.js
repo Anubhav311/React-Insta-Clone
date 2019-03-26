@@ -4,7 +4,6 @@ import CommentSection from '../commentSection/CommentSection';
 import './postContainer.css'
 
 const PostContainer = (props) => {
-    console.log(props);
     return    <div>{props.dummyData.map((post, index) => (
         <div className="postContainer" key={index}>
             <div className="user">
