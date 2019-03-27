@@ -8,7 +8,7 @@ const WithAuthentica = FirstComponent => SecondComponent => props => {
         addComment={props.addComment}
         handleChanges={props.handleChanges}
         />
-    } else {
+    } else if (!props.login) {
         return <SecondComponent 
             usernameValue={props.usernameValue}
             passwordValue={props.passwordValue}

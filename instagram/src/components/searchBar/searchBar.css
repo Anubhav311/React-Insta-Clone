@@ -54,3 +54,15 @@
 .fa-lg {
     color: gray;
 }
+
+.logOut {
+    font-size: 0.7rem;
+    margin-left: -250px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+
+.logOut:hover {
+    color: gray;
+}

@@ -25,6 +25,7 @@ const SearchBar = (props) => {
                 <i className="far fa-heart fa-lg"></i>
                 <i className="far fa-user fa-lg"></i>
             </div>
+            <p className="logOut" onClick={props.logOut}>Log <br/>Out</p>
         </div>
     )
 }

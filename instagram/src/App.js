@@ -16,7 +16,7 @@ class App extends Component {
       posts: dummyData,
       tempComment: '',
       tempDummyData: dummyData,
-      loginStatus: false,
+      loginStatus: !localStorage.getItem('login'),
       username: '',
       password: ''
     };
@@ -24,7 +24,7 @@ class App extends Component {
 
   componentDidMount() {
     this.setState({
-      posts: dummyData
+      posts: dummyData,
     })
   }
 
@@ -69,6 +69,7 @@ class App extends Component {
       posts: tempContainer,
       tempComment: ''
     })
+    console.log(this.state.loginStatus)
   }
 
   noReload = (event) => {
@@ -76,36 +77,39 @@ class App extends Component {
   }
 
   usernameValue = (event) => {
-    let username = event.target.value
-    // this.setState({
-    //   username: username
-    // })
     localStorage.setItem('usernam', event.target.value)
-    console.log(this.state.username)
   }
 
   passwordValue = (event) => {
     let password = event.target.value
     this.setState({
       password: password
-    })
-    console.log(this.state.password)
+    })    
+    console.log(localStorage.getItem('login'))
   }
 
   checkLogin = (event) => {
-    event.preventDefault()
-    console.log('working')
-    if(this.state.password == 'anubhav') {
+    // event.preventDefault()
+    if(this.state.password == 12345678) {
+      localStorage.setItem('login', true)
       this.setState({
-        loginStatus: true
+        loginStatus: localStorage.getItem('login')
       })
     }
+  }
+
+  logOut = (event) => {
+    localStorage.setItem('login', false)
+    this.setState({
+      loginStatus: !localStorage.getItem('login')
+    })
+    console.log('hi')
   }
 
   render() {
     return (
       <div className="App">
-        <SearchBar saveSearchValue={this.saveSearchValue} noReload={this.noReload}/>
+        <SearchBar saveSearchValue={this.saveSearchValue} noReload={this.noReload} logOut={this.logOut}/>
         <ComponentFromWithAuthenticate 
           login={this.state.loginStatus}
           dummyData={this.state.posts} 
