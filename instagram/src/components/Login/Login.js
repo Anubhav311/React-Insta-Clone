@@ -10,6 +10,7 @@ const Login = (props) => {
             <input className="login" placeholder="password" onChange={props.passwordValue}/>
             <button onClick={props.checkLogin}></button>
         </form>
+        {localStorage.setItem('login', false)}
     </div>
 }
 

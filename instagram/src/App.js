@@ -77,9 +77,9 @@ class App extends Component {
 
   usernameValue = (event) => {
     let username = event.target.value
-    this.setState({
-      username: username
-    })
+    // this.setState({
+    //   username: username
+    // })
     localStorage.setItem('usernam', event.target.value)
     console.log(this.state.username)
   }
@@ -95,7 +95,7 @@ class App extends Component {
   checkLogin = (event) => {
     event.preventDefault()
     console.log('working')
-    if(this.state.username == 'anubhav' && this.state.password == 'anubhav') {
+    if(this.state.password == 'anubhav') {
       this.setState({
         loginStatus: true
       })
