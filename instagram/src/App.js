@@ -64,7 +64,7 @@ class App extends Component {
   addComment = event => {
     event.preventDefault()
     let tempContainer = this.state.posts
-    tempContainer[event.target.id].comments.push({username: "anubhav", text: this.state.tempComment})
+    tempContainer[event.target.id].comments.push({username: localStorage.getItem('usernam'), text: this.state.tempComment})
     this.setState({
       posts: tempContainer,
       tempComment: ''
@@ -80,6 +80,7 @@ class App extends Component {
     this.setState({
       username: username
     })
+    localStorage.setItem('usernam', event.target.value)
     console.log(this.state.username)
   }
 
