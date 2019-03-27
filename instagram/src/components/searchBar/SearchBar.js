@@ -13,6 +13,7 @@ const SearchBar = (props) => {
             </div>
             <form onSubmit={props.noReload}>
                 <input 
+                    className="search-input"
                     type="text" 
                     placeholder="Search"
                     value={props.username}
@@ -24,6 +25,7 @@ const SearchBar = (props) => {
                 <i className="far fa-heart fa-lg"></i>
                 <i className="far fa-user fa-lg"></i>
             </div>
+            <p className="logOut" onClick={props.logOut}>Log <br/>Out</p>
         </div>
     )
 }

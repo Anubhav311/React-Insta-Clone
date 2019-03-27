@@ -22,8 +22,21 @@ const PostContainer = (props) => {
                 <CommentSection id={post.id} comments={post.comments} addComment={props.addComment} handleChanges={props.handleChanges}/>
             </div>
         </div>
-        )
+        ) 
     )}</div>
 }
 
-export default PostContainer;
+const Conditional = (props) => {
+    if(true) {
+    return <PostContainer 
+    dummyData={props.dummyData} 
+    incrementLikes={props.incrementLikes} 
+    addComment={props.addComment}
+    handleChanges={props.handleChanges}
+    />
+    } else {
+        return <h1>eat my poop</h1>
+    }
+}
+
+export default Conditional;

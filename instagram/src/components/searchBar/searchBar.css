@@ -30,7 +30,7 @@
     width: 100%;
 }
 
-input {
+.search-input {
     margin-left: -110px;
     border: 1px solid lightgray;
     border-radius: 3px;
@@ -52,5 +52,17 @@ input {
 }
 
 .fa-lg {
+    color: gray;
+}
+
+.logOut {
+    font-size: 0.7rem;
+    margin-left: -250px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+
+.logOut:hover {
     color: gray;
 }
