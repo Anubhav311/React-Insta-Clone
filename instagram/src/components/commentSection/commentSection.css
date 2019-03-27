@@ -1,0 +1,43 @@
+.commentSection {
+    margin: 10px;
+}
+
+.comment {
+    display: flex;
+}
+
+.comment-username {
+    margin: 0;
+    margin-bottom: 5px;
+    margin-right: 10px;
+    font-weight: 600;
+}
+
+.comment-text {
+    margin: 0;
+}
+
+.timestamp {
+    color: gray;
+    font-size: .8rem;
+    margin: 5px 0;
+}
+
+.comment-input {
+    margin: 0;
+    width: 98%;
+    text-align: left;
+    background-color: white;
+    border: none;
+}
+
+::placeholder {
+    font-weight: bold;
+    color: lightgray;
+  }
+
+.inputForm {
+    border-top: 1px solid lightgray;
+    padding-top: 10px;
+    margin-top: 10px;
+}
