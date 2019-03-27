@@ -30,7 +30,7 @@
     width: 100%;
 }
 
-input {
+.search-input {
     margin-left: -110px;
     border: 1px solid lightgray;
     border-radius: 3px;

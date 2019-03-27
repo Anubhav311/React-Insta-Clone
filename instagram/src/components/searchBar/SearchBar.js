@@ -13,6 +13,7 @@ const SearchBar = (props) => {
             </div>
             <form onSubmit={props.noReload}>
                 <input 
+                    className="search-input"
                     type="text" 
                     placeholder="Search"
                     value={props.username}

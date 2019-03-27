@@ -15,7 +15,7 @@ const CommentSection = (props) => {
                 className="comment-input" 
                 placeholder="Add a comment..." 
                 onChange={props.handleChanges}
-                type="text"
+                type="text" 
             />
         </form>
     </div>

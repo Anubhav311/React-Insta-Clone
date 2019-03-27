@@ -3,8 +3,11 @@ import React, { Component } from 'react';
 import dummyData from './dummy-data';
 import './App.css';
 import SearchBar from './components/searchBar/SearchBar';
+import WithAuthentica from './components/authentication/withAuthenticate';
 import PostContainer from './components/postContainer/PostContainer';
+import Login from './components/Login/Login';
 
+const ComponentFromWithAuthenticate = WithAuthentica(PostContainer)(Login);
 
 class App extends Component {
   constructor() {
@@ -12,8 +15,10 @@ class App extends Component {
     this.state = {
       posts: dummyData,
       tempComment: '',
-      tempDummyData: dummyData
-
+      tempDummyData: dummyData,
+      loginStatus: false,
+      username: '',
+      password: ''
     };
   }
 
@@ -70,15 +75,46 @@ class App extends Component {
     event.preventDefault()
   }
 
+  usernameValue = (event) => {
+    let username = event.target.value
+    this.setState({
+      username: username
+    })
+    console.log(this.state.username)
+  }
+
+  passwordValue = (event) => {
+    let password = event.target.value
+    this.setState({
+      password: password
+    })
+    console.log(this.state.password)
+  }
+
+  checkLogin = (event) => {
+    event.preventDefault()
+    console.log('working')
+    if(this.state.username == 'anubhav' && this.state.password == 'anubhav') {
+      this.setState({
+        loginStatus: true
+      })
+    }
+  }
+
   render() {
     return (
       <div className="App">
         <SearchBar saveSearchValue={this.saveSearchValue} noReload={this.noReload}/>
-        <PostContainer 
+        <ComponentFromWithAuthenticate 
+          login={this.state.loginStatus}
           dummyData={this.state.posts} 
           incrementLikes={this.incrementLikes} 
           addComment={this.addComment}
           handleChanges={this.handleChanges}
+
+          usernameValue={this.usernameValue}
+          passwordValue={this.passwordValue}
+          checkLogin={this.checkLogin}
         />
       </div>
     );
