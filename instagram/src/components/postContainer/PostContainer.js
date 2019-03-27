@@ -14,12 +14,12 @@ const PostContainer = (props) => {
                 <img src={post.imageUrl} className="post-image" alt="post-visuals"/>
             </div>
             <div className="post-icons">
-                <i className="far fa-heart fa-lg icon"></i>
+                <i className="far fa-heart fa-lg icon" onClick={props.incrementLikes} id={index}></i>
                 <i className="far fa-comment fa-lg icon"></i>
                 <p className="likes">{post.likes} likes</p>
             </div>
-            <div>
-                <CommentSection comments={post.comments}/>
+            <div id={index}>
+                <CommentSection id={post.id} comments={post.comments} addComment={props.addComment} handleChanges={props.handleChanges}/>
             </div>
         </div>
         )
