@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
+import styled, { css } from 'styled-components';
 
 import dummyData from './dummy-data';
-import './App.css';
 import SearchBar from './components/searchBar/SearchBar';
 import WithAuthentica from './components/authentication/withAuthenticate';
 import PostContainer from './components/postContainer/PostContainer';
 import Login from './components/Login/Login';
 
+
+const AppDiv = styled.div`
+  background-color: #FAFAFA;
+`
 const ComponentFromWithAuthenticate = WithAuthentica(PostContainer)(Login);
 
 class App extends Component {
@@ -108,7 +112,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <AppDiv>
         <SearchBar saveSearchValue={this.saveSearchValue} noReload={this.noReload} logOut={this.logOut}/>
         <ComponentFromWithAuthenticate 
           login={this.state.loginStatus}
@@ -121,7 +125,7 @@ class App extends Component {
           passwordValue={this.passwordValue}
           checkLogin={this.checkLogin}
         />
-      </div>
+      </AppDiv>
     );
   }
 }
