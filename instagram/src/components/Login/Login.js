@@ -46,7 +46,7 @@ const Login = (props) => {
         <h1>Log In</h1>
         <FormTag>
             <LoginInput className="login" placeholder="username" onChange={props.usernameValue}/>
-            <LoginInput className="login" placeholder="12345678" onChange={props.passwordValue}/>
+            <LoginInput className="login" placeholder="password is 12345678" onChange={props.passwordValue}/>
             <ButtonTag onClick={props.checkLogin}>Log In</ButtonTag>
         </FormTag>
     </LoginContainerDiv>
